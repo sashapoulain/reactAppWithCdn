@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Days Of React Challange</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            line-height: 1.5;
+            font-family: 'Montserrat';
+            font-weight: 300;
+            color: black;
+        }
+        
+        .root {
+            min-height: 100%;
+            position: relative;
+        }
+        
+        .header-wrapper,
+        .main-wrapper,
+        .footer-wrapper {
+            width: 85%;
+            margin: auto;
+        }
+        
+        .header-wrapper,
+        .main-wrapper {
+            padding: 10px;
+            margin: 2px auto;
+        }
+        
+        h1 {
+            font-size: 70px;
+            font-weight: 300;
+        }
+        
+        h2,
+        h3 {
+            font-weight: 300;
+        }
+        
+        header {
+            background-color: #61dbfb;
+            padding: 10px;
+        }
+        
+        .result {
+            background-color: paleturquoise;
+            width: 85%;
+            margin: auto;
+            padding: 10px;
+        }
+        
+        main{
+            padding: 10px;
+            padding-bottom: 60px;
+            height: 60vh;
+            /* Height of the footer */
+        }
+        
+        ul {
+            margin-left: 15px;
+        }
+        
+        ul li {
+            list-style: none;
+        }
+        
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            /* Height of the footer */
+            background: #6cf;
+        }
+        
+        .footer-wrapper {
+            font-weight: 400;
+            text-align: center;
+            line-height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js" integrity="sha512-m7nhpWHotpucPI37I4lPovL28Bm2BhAMV8poF3F8Z9oOEZ3jlxGzkgvG0EMt1mVL1xydr1erlBbmN90js/ssUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.min.js" integrity="sha512-I5GJQRKGdj2miDs8ComgARfiAQiZJo/43YasH22qtweoG+YRXLTDYegxC/vPgw/ERxRzww/F4l4+8UiMmI20sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js" integrity="sha512-ND11pbmp3M3Wldj90In1EUlHIt8T7O6FykizQ/yXrFjHtpX+D0SX+/IVeLjqAV91r/Lavq4BpWJIC0nUtw5Kvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/babel">
+        console.log(React); 
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+        //DATALAR DİNAMİK OLARAK DA KULLANILABİLİR 
+
+        //string ekleme
+        const welcome = 'Welcome To 30Days Of React' 
+        const title = 'Getting Started React'
+        const subtitle = 'Javascript Library'
+        const fName= 'Şeyma'
+        const lName = 'Yılmaz'
+        const date = '10/13/2023'
+        const copy = 'Copyright 2023'
+
+        //number ekleme
+        const numOne = 3
+        const numTwo = 6
+        const rootElement = document.querySelector('.root');
+        const currentYear = new Date().getFullYear()
+        console.log(currentYear);
+        const bornYear= 1992
+        const age = currentYear - bornYear
+
+        //array ekleme
+        const techs = ['HTML', 'CSS', 'JAVASCRIPT']
+
+        //arrayi html içine formatlayıp liste şeklinde ekleme
+        const techsFormatted = techs.map((t) => <li key={t}>{t}</li>)
+
+        //obje ekleme
+        const user = {
+            name: 'Mert',
+            lName: 'Korkmaz'
+        }
+
+
+
+
+
+        console.log(rootElement); // const jsxElement =
+        <h1>I am a JSX Element.</h1>; const styleHeader= {backgroundColor: '#61DBFB', padding: 25, lineHeight: 1.5,}; const header = (
+        <header style={styleHeader}>
+            <div className="header-wrapper">
+                <h1>{welcome}</h1>
+                <h2>{title}</h2>
+                <h3>{subtitle}</h3>
+                <p>{fName} {lName}</p>
+                <p>Kullanıcı: {user.name} {user.lName}</p>
+                <p>Yaş: {age}</p>
+                <small>Günün Tarihi: {date}</small>
+            </div>
+        </header>
+        );
+        
+        const main = (
+        <main style={{backgroundColor: '#F3F0F5'}}>
+            <div className="main-wrapper">
+                <p>Main alanı</p>
+                <ul>{techsFormatted}</ul>
+            </div>
+            <p className="result">{numOne} + {numTwo} = {numOne + numTwo}</p>
+        </main>) ; 
+        const footer = (
+        <footer style={{backgroundColor: '#61DBFB'}}>
+            <div className="footer-wrapper">
+                <p>{copy}</p>
+            </div>
+        </footer>); 
+        const app = (
+        <div>{header} {main} {footer}</div>);
+         ReactDOM.render(app, rootElement);
+
+    </script>
+
+</body>
+
+
+</html>
+
+</html>
